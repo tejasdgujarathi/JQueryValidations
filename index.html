@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<title>JQuery Validations</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-validation.js"></script>
+	<script type="text/javascript" src="js/validate-form.js"></script>
+	<style type="text/css">
+		#labels, #texts {
+			float: left;
+			clear: none; 
+			border: 1px solid red;
+		}
+		
+		 #texts div, #labels div {
+		 	border-bottom: 1px solid blue;
+		 }
+		 
+		 #error {
+		 	display: none;
+		 }
+
+	</style>
+</head>
+<body>
+	<div>
+		<form action="welcome.html" id="aboutMe">
+			<div id="labels">
+				<div><label for="title">Title</label></div>
+				<div><label for="firstname">Name</label></div>
+				<div><label for="email">Email</label></div>
+				<div><label for="contact">Contact Number</label></div>
+				<div><label for="username">Username</label></div>
+				<div><label for="password">Password</label></div>
+			</div>
+			<div id="texts">
+				<div>
+					<select id="title" name="title">
+						<option>SELECT</option>
+						<option>Mr</option>
+						<option>Mrs</option>
+						<option>Miss</option>
+					</select> 
+				</div>
+				<div><input name="firstname" type="text"/></div>
+				<div><input name="email" type="text"/></div>
+				<div><input name="contact" type="text"/></div>
+				<div><input name="username" type="text"/></div>
+				<div><input name="password" type="password"/></div>
+			</div>
+			
+			<div><input type="submit" value="Enter"/>
+			<div id="error"><span id="errorCount"></span> error(s). Please rectify and resubmit.</div>
+		</form>
+	</div>
+</body>
+</html>

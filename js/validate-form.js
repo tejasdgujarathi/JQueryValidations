@@ -2,9 +2,15 @@ $.validator.addMethod("selectDropDown", function(value, element) {
     return value != 'SELECT';
 }, "Title must be selected.");
 
-$.validator.addMethod("accept1", function(value, element) {
-	return true;
-}, "T");
+$.validator.addMethod("isFirstNameValid", function(value, element) {
+	var firstnamePattern = /^[A-z]+$/;
+	return firstnamePattern.test(value);
+}, "Please enter only characters.");
+
+$.validator.addMethod("isContactNumberValid", function(value, element) {
+	var numberPattern = /^[0-9]+$/;
+	return numberPattern.test(value);
+}, "Please enter only digits.");
 
 $(document).ready(function(){
 	$('#aboutMe').validate({
@@ -30,10 +36,18 @@ $(document).ready(function(){
 				required: true,
 				minlength: 5,
 				maxlength: 10,
-				accept1: true
+				isFirstNameValid: true
 			},			
 			title: {
 				selectDropDown: true
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			contact: {
+				required: true,
+				isContactNumberValid: true
 			}
 		},
 		messages: {
@@ -41,7 +55,13 @@ $(document).ready(function(){
 	            required: "Please fill in your first name.",
 	            minlength: "Name should be atleast of 5 characters.",
 	            maxlength: "Name should be of less than 10 characters."
-	        }
+	        },
+	        contact: {
+	            required: "Please fill in your contact number.",
+	        },
+	        email: {
+	            required: "Please retype your email."
+	        },
 		}
 	});
 	

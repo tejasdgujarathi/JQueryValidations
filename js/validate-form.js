@@ -70,7 +70,14 @@ $(document).ready(function(){
 	            required: "Please type your email.",
 	            email: "Please enter a valid email."
 	        }
-		}
+		},
+		
+		 highlight: function(element, errorClass, validClass) {
+			 $(element).addClass('showError');
+		  },
+		  unhighlight: function(element, errorClass, validClass) {
+			  $(element).removeClass('showError');
+		  }
 	});
 	
 });

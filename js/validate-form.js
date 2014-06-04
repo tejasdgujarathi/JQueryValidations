@@ -31,6 +31,8 @@ $(document).ready(function(){
 	    	
 	    },
 	    
+	    errorClass: "showError", 
+	    
 	    focusCleanup: true,
 		
 		rules: {
@@ -69,11 +71,13 @@ $(document).ready(function(){
 		},		
 		
 		highlight: function(element, errorClass, validClass) {
-			$(element).addClass('showError');
+			$(element).addClass(errorClass);
+			$(element).addClass('errorOnElement');
 		},
 		
 		unhighlight: function(element, errorClass, validClass) {
-			$(element).removeClass('showError');
+			$(element).removeClass(errorClass);
+			$(element).removeClass('errorOnElement');
 		}
 	});
 	

@@ -9,14 +9,7 @@ $.validator.addMethod("isFirstNameValid", function(value, element) {
 
 $.validator.addMethod("isContactNumberValid", function(value, element) {
 	var numberPattern = /^[0-9]+$/;
-	var isValid = numberPattern.test(value);
-	
-	if(isValid){
-		$('input[name="' +element.name+ '"]').css({'border': ''})
-	}else{
-		$('input[name="' +element.name+ '"]').css({'border': '1px solid red'})		
-	}
-	return isValid;
+	return numberPattern.test(value);
 }, "Please enter only digits.");
 
 $(document).ready(function(){

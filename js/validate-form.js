@@ -30,6 +30,8 @@ $(document).ready(function(){
 	    	}
 	    	
 	    },
+	    
+	    focusCleanup: true,
 		
 		rules: {
 			firstname: {

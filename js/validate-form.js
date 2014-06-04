@@ -67,8 +67,9 @@ $(document).ready(function(){
 	            required: "Please fill in your contact number.",
 	        },
 	        email: {
-	            required: "Please retype your email."
-	        },
+	            required: "Please type your email.",
+	            email: "Please enter a valid email."
+	        }
 		}
 	});
 	

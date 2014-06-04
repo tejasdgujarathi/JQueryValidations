@@ -57,6 +57,7 @@ $(document).ready(function(){
 				isContactNumberValid: true
 			}
 		},
+		
 		messages: {
 	        firstname: {
 	            required: "Please fill in your first name.",
@@ -70,14 +71,15 @@ $(document).ready(function(){
 	            required: "Please type your email.",
 	            email: "Please enter a valid email."
 	        }
+		},		
+		
+		highlight: function(element, errorClass, validClass) {
+			$(element).addClass('showError');
 		},
 		
-		 highlight: function(element, errorClass, validClass) {
-			 $(element).addClass('showError');
-		  },
-		  unhighlight: function(element, errorClass, validClass) {
-			  $(element).removeClass('showError');
-		  }
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).removeClass('showError');
+		}
 	});
 	
 });
